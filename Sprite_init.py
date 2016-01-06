@@ -16,12 +16,12 @@ class Cardback_2 (pygame.sprite.Sprite):
 class Cardback_3 (pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("cardback_2.png").convert()
+        self.image = pygame.image.load("cardback_3.png").convert()
         self.rect = self.image.get_rect()
 class Cardback_4 (pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load("cardback_2.png").convert()
+        self.image = pygame.image.load("cardback_4.png").convert()
         self.rect = self.image.get_rect()
 
 class Card_1 (pygame.sprite.Sprite):
@@ -73,4 +73,10 @@ class Card_10 (pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("card_10.png").convert()
+        self.rect = self.image.get_rect()
+class Pointer (pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.image.load("pointer.png").convert()
+        self.image.set_colorkey(white)
         self.rect = self.image.get_rect()

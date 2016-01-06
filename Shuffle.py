@@ -17,7 +17,8 @@ counter_9 = 0
 counter_10 = 0
 
 def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
-                card_6_list, card_7_list, card_8_list, card_9_list, card_10_list):
+                card_6_list, card_7_list, card_8_list, card_9_list, card_10_list,
+             cardback_r_list, cardback_g_list, cardback_lb_list, cardback_db_list):
     counter_1 = 0
     counter_2 = 0
     counter_3 = 0
@@ -38,6 +39,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_1.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_1.rect.x
             nesses_rect_y = card_1.rect.y
+            cardback_lb = Sprite_init.Cardback_3()
+            cardback_lb_list.add(cardback_lb)
+            cardback_lb.rect.x = nesses_rect_x
+            cardback_lb.rect.y = nesses_rect_y
             counter_1 += 1
         if counter_1 == 2:
             rand_coll.remove('0')
@@ -49,6 +54,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_2.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_2.rect.x
             nesses_rect_y = card_2.rect.y
+            cardback_lb = Sprite_init.Cardback_3()
+            cardback_lb_list.add(cardback_lb)
+            cardback_lb.rect.x = nesses_rect_x
+            cardback_lb.rect.y = nesses_rect_y
             counter_2 += 1
         if counter_2 == 2:
             rand_coll.remove('1')
@@ -60,6 +69,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_3.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_3.rect.x
             nesses_rect_y = card_3.rect.y
+            cardback_db = Sprite_init.Cardback_4()
+            cardback_db_list.add(cardback_db)
+            cardback_db.rect.x = nesses_rect_x
+            cardback_db.rect.y = nesses_rect_y
             counter_3 += 1
         if counter_3 == 2:
             rand_coll.remove('2')
@@ -71,6 +84,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_4.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_4.rect.x
             nesses_rect_y = card_4.rect.y
+            cardback_db = Sprite_init.Cardback_4()
+            cardback_db_list.add(cardback_db)
+            cardback_db.rect.x = nesses_rect_x
+            cardback_db.rect.y = nesses_rect_y
             counter_4 += 1
         if counter_4 == 2:
             rand_coll.remove('3')
@@ -82,6 +99,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_5.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_5.rect.x
             nesses_rect_y = card_5.rect.y
+            cardback_r = Sprite_init.Cardback_1()
+            cardback_r_list.add(cardback_r)
+            cardback_r.rect.x = nesses_rect_x
+            cardback_r.rect.y = nesses_rect_y
             counter_5 += 1
         if counter_5 == 2:
             rand_coll.remove('4')
@@ -93,6 +114,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_6.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_6.rect.x
             nesses_rect_y = card_6.rect.y
+            cardback_g = Sprite_init.Cardback_2()
+            cardback_g_list.add(cardback_g)
+            cardback_g.rect.x = nesses_rect_x
+            cardback_g.rect.y = nesses_rect_y
             counter_6 += 1
         if counter_6 == 2:
             rand_coll.remove('5')
@@ -104,6 +129,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_7.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_7.rect.x
             nesses_rect_y = card_7.rect.y
+            cardback_db = Sprite_init.Cardback_4()
+            cardback_db_list.add(cardback_db)
+            cardback_db.rect.x = nesses_rect_x
+            cardback_db.rect.y = nesses_rect_y
             counter_7 += 1
         if counter_7 == 2:
             rand_coll.remove('6')
@@ -115,6 +144,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_8.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_8.rect.x
             nesses_rect_y = card_8.rect.y
+            cardback_lb = Sprite_init.Cardback_3()
+            cardback_lb_list.add(cardback_lb)
+            cardback_lb.rect.x = nesses_rect_x
+            cardback_lb.rect.y = nesses_rect_y
             counter_8 += 1
         if counter_8 == 2:
             rand_coll.remove('7')
@@ -126,6 +159,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_9.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_9.rect.x
             nesses_rect_y = card_9.rect.y
+            cardback_g = Sprite_init.Cardback_2()
+            cardback_g_list.add(cardback_g)
+            cardback_g.rect.x = nesses_rect_x
+            cardback_g.rect.y = nesses_rect_y
             counter_9 += 1
         if counter_9 == 2:
             rand_coll.remove('8')
@@ -137,6 +174,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
             card_10.rect.y = (size[1]-cardback_1.get_height()*4)/5
             nesses_rect_x = card_10.rect.x
             nesses_rect_y = card_10.rect.y
+            cardback_db = Sprite_init.Cardback_4()
+            cardback_db_list.add(cardback_db)
+            cardback_db.rect.x = nesses_rect_x
+            cardback_db.rect.y = nesses_rect_y
             counter_10 += 1
         if counter_10 == 2:
             rand_coll.remove('9')
@@ -151,6 +192,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_1.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_1.rect.x
                 nesses_rect_y = card_1.rect.y
+                cardback_lb = Sprite_init.Cardback_3()
+                cardback_lb_list.add(cardback_lb)
+                cardback_lb.rect.x = nesses_rect_x
+                cardback_lb.rect.y = nesses_rect_y
                 counter_1 += 1
             if counter_1 == 2:
                 rand_coll.remove('0')
@@ -162,6 +207,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_2.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_2.rect.x
                 nesses_rect_y = card_2.rect.y
+                cardback_lb = Sprite_init.Cardback_3()
+                cardback_lb_list.add(cardback_lb)
+                cardback_lb.rect.x = nesses_rect_x
+                cardback_lb.rect.y = nesses_rect_y
                 counter_2 += 1
             if counter_2 == 2:
                 rand_coll.remove('1')
@@ -173,6 +222,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_3.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_3.rect.x
                 nesses_rect_y = card_3.rect.y
+                cardback_db = Sprite_init.Cardback_4()
+                cardback_db_list.add(cardback_db)
+                cardback_db.rect.x = nesses_rect_x
+                cardback_db.rect.y = nesses_rect_y
                 counter_3 += 1
             if counter_3 == 2:
                 rand_coll.remove('2')
@@ -184,6 +237,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_4.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_4.rect.x
                 nesses_rect_y = card_4.rect.y
+                cardback_db = Sprite_init.Cardback_4()
+                cardback_db_list.add(cardback_db)
+                cardback_db.rect.x = nesses_rect_x
+                cardback_db.rect.y = nesses_rect_y
                 counter_4 += 1
             if counter_4 == 2:
                 rand_coll.remove('3')
@@ -195,6 +252,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_5.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_5.rect.x
                 nesses_rect_y = card_5.rect.y
+                cardback_r = Sprite_init.Cardback_1()
+                cardback_r_list.add(cardback_r)
+                cardback_r.rect.x = nesses_rect_x
+                cardback_r.rect.y = nesses_rect_y
                 counter_5 += 1
             if counter_5 == 2:
                 rand_coll.remove('4')
@@ -206,6 +267,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_6.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_6.rect.x
                 nesses_rect_y = card_6.rect.y
+                cardback_g = Sprite_init.Cardback_2()
+                cardback_g_list.add(cardback_g)
+                cardback_g.rect.x = nesses_rect_x
+                cardback_g.rect.y = nesses_rect_y
                 counter_6 += 1
             if counter_6 == 2:
                 rand_coll.remove('5')
@@ -217,6 +282,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_7.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_7.rect.x
                 nesses_rect_y = card_7.rect.y
+                cardback_db = Sprite_init.Cardback_4()
+                cardback_db_list.add(cardback_db)
+                cardback_db.rect.x = nesses_rect_x
+                cardback_db.rect.y = nesses_rect_y
                 counter_7 += 1
             if counter_7 == 2:
                 rand_coll.remove('6')
@@ -228,6 +297,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_8.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_8.rect.x
                 nesses_rect_y = card_8.rect.y
+                cardback_lb = Sprite_init.Cardback_3()
+                cardback_lb_list.add(cardback_lb)
+                cardback_lb.rect.x = nesses_rect_x
+                cardback_lb.rect.y = nesses_rect_y
                 counter_8 += 1
             if counter_8 == 2:
                 rand_coll.remove('7')
@@ -239,6 +312,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_9.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_9.rect.x
                 nesses_rect_y = card_9.rect.y
+                cardback_g = Sprite_init.Cardback_2()
+                cardback_g_list.add(cardback_g)
+                cardback_g.rect.x = nesses_rect_x
+                cardback_g.rect.y = nesses_rect_y
                 counter_9 += 1
             if counter_9 == 2:
                 rand_coll.remove('8')
@@ -250,6 +327,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_10.rect.y = (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_10.rect.x
                 nesses_rect_y = card_10.rect.y
+                cardback_db = Sprite_init.Cardback_4()
+                cardback_db_list.add(cardback_db)
+                cardback_db.rect.x = nesses_rect_x
+                cardback_db.rect.y = nesses_rect_y
                 counter_10 += 1
             if counter_10 == 2:
                 rand_coll.remove('9')
@@ -264,6 +345,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_1.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_1.rect.x
                 nesses_rect_y = card_1.rect.y
+                cardback_lb = Sprite_init.Cardback_3()
+                cardback_lb_list.add(cardback_lb)
+                cardback_lb.rect.x = nesses_rect_x
+                cardback_lb.rect.y = nesses_rect_y
                 counter_1 += 1
             if counter_1 == 2:
                 rand_coll.remove('0')
@@ -275,6 +360,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_2.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_2.rect.x
                 nesses_rect_y = card_2.rect.y
+                cardback_lb = Sprite_init.Cardback_3()
+                cardback_lb_list.add(cardback_lb)
+                cardback_lb.rect.x = nesses_rect_x
+                cardback_lb.rect.y = nesses_rect_y
                 counter_2 += 1
             if counter_2 == 2:
                 rand_coll.remove('1')
@@ -286,6 +375,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_3.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_3.rect.x
                 nesses_rect_y = card_3.rect.y
+                cardback_db = Sprite_init.Cardback_4()
+                cardback_db_list.add(cardback_db)
+                cardback_db.rect.x = nesses_rect_x
+                cardback_db.rect.y = nesses_rect_y
                 counter_3 += 1
             if counter_3 == 2:
                 rand_coll.remove('2')
@@ -297,6 +390,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_4.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_4.rect.x
                 nesses_rect_y = card_4.rect.y
+                cardback_db = Sprite_init.Cardback_4()
+                cardback_db_list.add(cardback_db)
+                cardback_db.rect.x = nesses_rect_x
+                cardback_db.rect.y = nesses_rect_y
                 counter_4 += 1
             if counter_4 == 2:
                 rand_coll.remove('3')
@@ -308,6 +405,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_5.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_5.rect.x
                 nesses_rect_y = card_5.rect.y
+                cardback_r = Sprite_init.Cardback_1()
+                cardback_r_list.add(cardback_r)
+                cardback_r.rect.x = nesses_rect_x
+                cardback_r.rect.y = nesses_rect_y
                 counter_5 += 1
             if counter_5 == 2:
                 rand_coll.remove('4')
@@ -319,6 +420,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_6.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_6.rect.x
                 nesses_rect_y = card_6.rect.y
+                cardback_g = Sprite_init.Cardback_2()
+                cardback_g_list.add(cardback_g)
+                cardback_g.rect.x = nesses_rect_x
+                cardback_g.rect.y = nesses_rect_y
                 counter_6 += 1
             if counter_6 == 2:
                 rand_coll.remove('5')
@@ -330,6 +435,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_7.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_7.rect.x
                 nesses_rect_y = card_7.rect.y
+                cardback_db = Sprite_init.Cardback_4()
+                cardback_db_list.add(cardback_db)
+                cardback_db.rect.x = nesses_rect_x
+                cardback_db.rect.y = nesses_rect_y
                 counter_7 += 1
             if counter_7 == 2:
                 rand_coll.remove('6')
@@ -341,6 +450,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_8.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_8.rect.x
                 nesses_rect_y = card_8.rect.y
+                cardback_lb = Sprite_init.Cardback_3()
+                cardback_lb_list.add(cardback_lb)
+                cardback_lb.rect.x = nesses_rect_x
+                cardback_lb.rect.y = nesses_rect_y
                 counter_8 += 1
             if counter_8 == 2:
                 rand_coll.remove('7')
@@ -352,6 +465,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_9.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_9.rect.x
                 nesses_rect_y = card_9.rect.y
+                cardback_g = Sprite_init.Cardback_2()
+                cardback_g_list.add(cardback_g)
+                cardback_g.rect.x = nesses_rect_x
+                cardback_g.rect.y = nesses_rect_y
                 counter_9 += 1
             if counter_9 == 2:
                 rand_coll.remove('8')
@@ -363,6 +480,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                 card_10.rect.y = nesses_rect_y + cardback_1.get_height() + (size[1]-cardback_1.get_height()*4)/5
                 nesses_rect_x = card_10.rect.x
                 nesses_rect_y = card_10.rect.y
+                cardback_db = Sprite_init.Cardback_4()
+                cardback_db_list.add(cardback_db)
+                cardback_db.rect.x = nesses_rect_x
+                cardback_db.rect.y = nesses_rect_y
                 counter_10 += 1
             if counter_10 == 2:
                 rand_coll.remove('9')
@@ -377,6 +498,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_1.rect.y = nesses_rect_y
                     nesses_rect_x = card_1.rect.x
                     nesses_rect_y = card_1.rect.y
+                    cardback_lb = Sprite_init.Cardback_3()
+                    cardback_lb_list.add(cardback_lb)
+                    cardback_lb.rect.x = nesses_rect_x
+                    cardback_lb.rect.y = nesses_rect_y
                     counter_1 += 1
                 if counter_1 == 2:
                     rand_coll.remove('0')
@@ -388,6 +513,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_2.rect.y = nesses_rect_y
                     nesses_rect_x = card_2.rect.x
                     nesses_rect_y = card_2.rect.y
+                    cardback_lb = Sprite_init.Cardback_3()
+                    cardback_lb_list.add(cardback_lb)
+                    cardback_lb.rect.x = nesses_rect_x
+                    cardback_lb.rect.y = nesses_rect_y
                     counter_2 += 1
                 if counter_2 == 2:
                     rand_coll.remove('1')
@@ -399,6 +528,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_3.rect.y = nesses_rect_y
                     nesses_rect_x = card_3.rect.x
                     nesses_rect_y = card_3.rect.y
+                    cardback_db = Sprite_init.Cardback_4()
+                    cardback_db_list.add(cardback_db)
+                    cardback_db.rect.x = nesses_rect_x
+                    cardback_db.rect.y = nesses_rect_y
                     counter_3 += 1
                 if counter_3 == 2:
                     rand_coll.remove('2')
@@ -410,6 +543,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_4.rect.y = nesses_rect_y
                     nesses_rect_x = card_4.rect.x
                     nesses_rect_y = card_4.rect.y
+                    cardback_db = Sprite_init.Cardback_4()
+                    cardback_db_list.add(cardback_db)
+                    cardback_db.rect.x = nesses_rect_x
+                    cardback_db.rect.y = nesses_rect_y
                     counter_4 += 1
                 if counter_4 == 2:
                     rand_coll.remove('3')
@@ -421,6 +558,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_5.rect.y = nesses_rect_y
                     nesses_rect_x = card_5.rect.x
                     nesses_rect_y = card_5.rect.y
+                    cardback_r = Sprite_init.Cardback_1()
+                    cardback_r_list.add(cardback_r)
+                    cardback_r.rect.x = nesses_rect_x
+                    cardback_r.rect.y = nesses_rect_y
                     counter_5 += 1
                 if counter_5 == 2:
                     rand_coll.remove('4')
@@ -432,6 +573,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_6.rect.y = nesses_rect_y
                     nesses_rect_x = card_6.rect.x
                     nesses_rect_y = card_6.rect.y
+                    cardback_g = Sprite_init.Cardback_2()
+                    cardback_g_list.add(cardback_g)
+                    cardback_g.rect.x = nesses_rect_x
+                    cardback_g.rect.y = nesses_rect_y
                     counter_6 += 1
                 if counter_6 == 2:
                     rand_coll.remove('5')
@@ -443,6 +588,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_7.rect.y = nesses_rect_y
                     nesses_rect_x = card_7.rect.x
                     nesses_rect_y = card_7.rect.y
+                    cardback_db = Sprite_init.Cardback_4()
+                    cardback_db_list.add(cardback_db)
+                    cardback_db.rect.x = nesses_rect_x
+                    cardback_db.rect.y = nesses_rect_y
                     counter_7 += 1
                 if counter_7 == 2:
                     rand_coll.remove('6')
@@ -454,6 +603,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_8.rect.y = nesses_rect_y
                     nesses_rect_x = card_8.rect.x
                     nesses_rect_y = card_8.rect.y
+                    cardback_lb = Sprite_init.Cardback_3()
+                    cardback_lb_list.add(cardback_lb)
+                    cardback_lb.rect.x = nesses_rect_x
+                    cardback_lb.rect.y = nesses_rect_y
                     counter_8 += 1
                 if counter_8 == 2:
                     rand_coll.remove('7')
@@ -465,6 +618,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_9.rect.y = nesses_rect_y
                     nesses_rect_x = card_9.rect.x
                     nesses_rect_y = card_9.rect.y
+                    cardback_g = Sprite_init.Cardback_2()
+                    cardback_g_list.add(cardback_g)
+                    cardback_g.rect.x = nesses_rect_x
+                    cardback_g.rect.y = nesses_rect_y
                     counter_9 += 1
                 if counter_9 == 2:
                     rand_coll.remove('8')
@@ -476,6 +633,10 @@ def Shuffle (card_1_list, card_2_list, card_3_list, card_4_list, card_5_list,
                     card_10.rect.y = nesses_rect_y
                     nesses_rect_x = card_10.rect.x
                     nesses_rect_y = card_10.rect.y
+                    cardback_db = Sprite_init.Cardback_4()
+                    cardback_db_list.add(cardback_db)
+                    cardback_db.rect.x = nesses_rect_x
+                    cardback_db.rect.y = nesses_rect_y
                     counter_10 += 1
                 if counter_10 == 2:
                     rand_coll.remove('9')
