@@ -29,6 +29,7 @@ def Level_1():
     ness_pos_x = 0
     ness_pos_x = 0
     all_ch = 0
+    click_sound = pygame.mixer.Sound("click.wav")
     background = pygame.image.load('background1.jpg').convert()
     cardback_1 = pygame.image.load('cardback_1.png').convert()
     pointer_list = pygame.sprite.Group()
@@ -66,23 +67,31 @@ def Level_1():
                 if event.key == pygame.K_LEFT:
                     if step_x > 0:
                         step_x -= 1
+                        click_sound.play()
                     else:
                         step_x = 4
+                        click_sound.play()
                 if event.key == pygame.K_RIGHT:
                     if step_x < 4:
                         step_x += 1
+                        click_sound.play()
                     else:
                         step_x = 0
+                        click_sound.play()
                 if event.key == pygame.K_UP:
                     if step_y > 0:
                         step_y -= 1
+                        click_sound.play()
                     else:
                         step_y = 3
+                        click_sound.play()
                 if event.key == pygame.K_DOWN:
                     if step_y < 3:
                         step_y += 1
+                        click_sound.play()
                     else:
                         step_y = 0
+                        click_sound.play()
                 if event.key == pygame.K_SPACE:
                     compare = True
                     if couple == 0:
