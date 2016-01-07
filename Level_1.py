@@ -2,6 +2,7 @@ import pygame
 import random
 import Sprite_init
 import Shuffle
+import time
 def Level_1():
     pygame.init()
     size = [1200, 900]
@@ -21,6 +22,27 @@ def Level_1():
     counter_8 = 0
     counter_9 = 0
     counter_10 = 0
+    shake_1 = False
+    shake_2 = False
+    shake_3 = False
+    shake_5 = False
+    shake_6 = False
+    shake_7 = False
+    shake_8 = False
+    shake_9 = False
+    shake_10 = False
+    shake_6_l = False
+    timer_sh_1 = 0
+    timer_sh_2 = 0
+    timer_sh_3 = 0
+    timer_sh_4 = 0
+    timer_sh_5 = 0
+    timer_sh_6 = 0
+    timer_sh_7 = 0
+    timer_sh_8 = 0
+    timer_sh_9 = 0
+    timer_sh_10 = 0
+    timer_l_6 = 0
     step_x = 0
     step_y = 0
     compare = False
@@ -30,6 +52,7 @@ def Level_1():
     ness_pos_x = 0
     all_ch = 0
     click_sound = pygame.mixer.Sound("click.wav")
+    sound_not = pygame.mixer.Sound("explode.wav")
     background = pygame.image.load('background1.jpg').convert()
     cardback_1 = pygame.image.load('cardback_1.png').convert()
     pointer_list = pygame.sprite.Group()
@@ -240,6 +263,11 @@ def Level_1():
                                     card_1_list.remove(card_1)
                                 if card_1.rect.x == ness_pos_x and card_1.rect.y == ness_pos_y:
                                     card_1_list.remove(card_1)
+                        else:
+                            cardback_lb = Sprite_init.Cardback_3()
+                            cardb_lblue_list.add(cardback_lb)
+                            cardback_lb.rect.x = position_x
+                            cardback_lb.rect.y = position_y
                         couple = 0
                         compare = False
                 for card_2 in card_2_list:
@@ -300,6 +328,9 @@ def Level_1():
                                     card_5_list.remove(card_5)
                                 if card_5.rect.x == ness_pos_x and card_5.rect.y == ness_pos_y:
                                     card_5_list.remove(card_5)
+                        elif number == 6:
+                            shake_5 = True
+                            shake_6_l = True
                         couple = 0
                         compare = False
                 for card_6 in card_6_list:
@@ -379,12 +410,29 @@ def Level_1():
                         compare = False
                 if all_ch == 1:
                     compare = False
-                    print('waaaaaaaaaaaaaaaaw')
-
-        cardb_red_list.draw(screen)
-        cardb_green_list.draw(screen)
-        cardb_lblue_list.draw(screen)
-        cardb_dblue_list.draw(screen)
+        
+        if shake_5 == True:
+            timer_sh_5 +=1
+            if timer_sh_5 == 60:
+                sound_not.play()
+                print('vot tak da')
+                cardback_r = Sprite_init.Cardback_1()
+                cardb_red_list.add(cardback_r)
+                cardback_r.rect.x = position_x
+                cardback_r.rect.y = position_y
+                timer_sh_5 = 0
+                shake_5 = False
+        if shake_6_l == True:
+            timer_l_6 += 1
+            if timer_l_6 == 60:
+                sound_not.play()
+                print('vot tak da')
+                cardback_g = Sprite_init.Cardback_2()
+                cardb_green_list.add(cardback_g)
+                cardback_g.rect.x = ness_pos_x
+                cardback_g.rect.y = ness_pos_y
+                timer_l_6 = 0
+                shake_6_l = False
         card_1_list.draw(screen)
         card_2_list.draw(screen)
         card_3_list.draw(screen)
@@ -395,8 +443,12 @@ def Level_1():
         card_8_list.draw(screen)
         card_9_list.draw(screen)
         card_10_list.draw(screen)
+        cardb_red_list.draw(screen)
+        cardb_green_list.draw(screen)
+        cardb_lblue_list.draw(screen)
+        cardb_dblue_list.draw(screen)
         pointer_list.draw(screen)
         pygame.display.flip()
-        clock.tick(20)
+        clock.tick(60)
     pygame.quit()
 Level_1()
