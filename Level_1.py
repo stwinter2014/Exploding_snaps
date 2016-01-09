@@ -12,6 +12,7 @@ def Level_1():
     clock = pygame.time.Clock()
     black = (0,0,0)
     white = (255, 255, 255)
+    score = 0
     counter_1 = 0
     counter_2 = 0
     counter_3 = 0
@@ -26,6 +27,8 @@ def Level_1():
     timer_sh = [0,0,0,0,0,0,0,0,0,0]
     shake_l = [False, False, False, False, False, False, False, False, False, False]
     timer_l = [0,0,0,0,0,0,0,0,0,0]
+    freedom = True
+    fr_count = 0
     step_x = 0
     step_y = 0
     compare = False
@@ -34,8 +37,10 @@ def Level_1():
     ness_pos_x = 0
     ness_pos_x = 0
     all_ch = 0
+    font = pygame.font.Font(None, 100)
+    font.set_italic(1)
     click_sound = pygame.mixer.Sound("click.wav")
-    sound_not = pygame.mixer.Sound("explode.wav")
+    explode_sound = pygame.mixer.Sound("explode.wav")
     background = pygame.image.load('background1.jpg').convert()
     cardback_1 = pygame.image.load('cardback_1.png').convert()
     pointer_list = pygame.sprite.Group()
@@ -71,28 +76,28 @@ def Level_1():
             if event.type == pygame.QUIT:
                 done = True
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_LEFT and freedom == True:
                     if step_x > 0:
                         step_x -= 1
                         click_sound.play()
                     else:
                         step_x = 4
                         click_sound.play()
-                if event.key == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT and freedom == True:
                     if step_x < 4:
                         step_x += 1
                         click_sound.play()
                     else:
                         step_x = 0
                         click_sound.play()
-                if event.key == pygame.K_UP:
+                if event.key == pygame.K_UP and freedom == True:
                     if step_y > 0:
                         step_y -= 1
                         click_sound.play()
                     else:
                         step_y = 3
                         click_sound.play()
-                if event.key == pygame.K_DOWN:
+                if event.key == pygame.K_DOWN and freedom == True:
                     if step_y < 3:
                         step_y += 1
                         click_sound.play()
@@ -103,6 +108,18 @@ def Level_1():
                     compare = True
                     if couple == 0:
                         all_ch = 0
+        for i in range(0, len(shake)):
+            if shake[i] == False:
+                fr_count += 1
+        for j in range(0, len(shake_l)):
+            if shake_l[i] == False:
+                fr_count += 1
+        if fr_count == 20:
+            freedom = True
+            fr_count = 0
+        else:
+            freedom = False
+            fr_count = 0
         screen.blit(background, [0,0])
         pointer.rect.x = pointer_move_x[step_x]
         pointer.rect.y = pointer_move_y[step_y]
@@ -294,11 +311,16 @@ def Level_1():
                             all_ch = 2
                             print('da4')
                             if number == 4:
+                                score += 10
                                 for card_4 in card_4_list:
                                     if card_4.rect.x == position_x and card_4.rect.y == position_y:
                                         card_4_list.remove(card_4)
                                     if card_4.rect.x == ness_pos_x and card_4.rect.y == ness_pos_y:
                                         card_4_list.remove(card_4)
+                                        card_4_w = Sprite_init.Card_4()
+                                        card_win_list.add(card_4_w)
+                                        card_4_w.rect.x = win_place[0]
+                                        card_4_w.rect.y = win_place[1]
                             couple = 0
                             compare = False
                     for card_5 in card_5_list:
@@ -309,6 +331,7 @@ def Level_1():
                             all_ch = 2
                             print('da5')
                             if number == 5:
+                                score += 10
                                 for card_5 in card_5_list:
                                     if card_5.rect.x == position_x and card_5.rect.y == position_y:
                                         card_5_list.remove(card_5)
@@ -318,6 +341,15 @@ def Level_1():
                                         card_win_list.add(card_5_w)
                                         card_5_w.rect.x = win_place[0]
                                         card_5_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[4] = True
+                                shake_l[0] = True
+                            elif number == 2:
+                                shake[4] = True
+                                shake_l[1] = True
+                            elif number == 3:
+                                shake[4] = True
+                                shake_l[2] = True
                             elif number == 4:
                                 shake[4] = True
                                 shake_l[3] = True
@@ -327,6 +359,9 @@ def Level_1():
                             elif number == 7:
                                 shake[4] = True
                                 shake_l[6] = True
+                            elif number == 8:
+                                shake[4] = True
+                                shake_l[7] = True
                             elif number == 9:
                                 shake[4] = True
                                 shake_l[8] = True
@@ -343,11 +378,16 @@ def Level_1():
                             all_ch = 2
                             print('da6')
                             if number == 6:
+                                score += 10
                                 for card_6 in card_6_list:
                                     if card_6.rect.x == position_x and card_6.rect.y == position_y:
                                         card_6_list.remove(card_6)
                                     if card_6.rect.x == ness_pos_x and card_6.rect.y == ness_pos_y:
                                         card_6_list.remove(card_6)
+                                        card_6_w = Sprite_init.Card_6()
+                                        card_win_list.add(card_6_w)
+                                        card_6_w.rect.x = win_place[0]
+                                        card_6_w.rect.y = win_place[1]
                             couple = 0
                             compare = False
                     for card_7 in card_7_list:
@@ -388,11 +428,16 @@ def Level_1():
                             all_ch = 2
                             print ('da9')
                             if number == 9:
+                                score += 10
                                 for card_9 in card_9_list:
                                     if card_9.rect.x == position_x and card_9.rect.y == position_y:
                                         card_9_list.remove(card_9)
                                     if card_9.rect.x == ness_pos_x and card_9.rect.y == ness_pos_y:
                                         card_9_list.remove(card_9)
+                                        card_9_w = Sprite_init.Card_9()
+                                        card_win_list.add(card_9_w)
+                                        card_9_w.rect.x = win_place[0]
+                                        card_9_w.rect.y = win_place[1]
                             couple = 0
                             compare = False
                     for card_10 in card_10_list:
@@ -412,19 +457,61 @@ def Level_1():
                             compare = False
                     if all_ch == 1:
                         compare = False
-        
         if shake[4] == True:
             timer_sh[4] +=1
             if timer_sh[4] == 60:
-                sound_not.play()
-                print('vot tak da')
+                explode_sound.play()
                 cardback_r = Sprite_init.Cardback_1()
                 cardb_red_list.add(cardback_r)
                 cardback_r.rect.x = position_x
                 cardback_r.rect.y = position_y
                 timer_sh[4] = 0
                 shake[4] = False
-        
+        if shake_l[0] == True:
+            timer_l[0] += 1
+            if timer_l[0] == 60:
+                cardback_lb = Sprite_init.Cardback_3()
+                cardb_lblue_list.add(cardback_lb)
+                cardback_lb.rect.x = ness_pos_x
+                cardback_lb.rect.y = ness_pos_y
+                timer_l[0] = 0
+                shake_l[0] = False
+        if shake_l[1] == True:
+            timer_l[1] += 1
+            if timer_l[1] == 60:
+                cardback_lb = Sprite_init.Cardback_3()
+                cardb_lblue_list.add(cardback_lb)
+                cardback_lb.rect.x = ness_pos_x
+                cardback_lb.rect.y = ness_pos_y
+                timer_l[1] = 0
+                shake_l[1] = False
+        if shake_l[2] == True:
+            timer_l[2] += 1
+            if timer_l[2] == 60:
+                cardback_db = Sprite_init.Cardback_4()
+                cardb_dblue_list.add(cardback_db)
+                cardback_db.rect.x = ness_pos_x
+                cardback_db.rect.y = ness_pos_y
+                timer_l[2] = 0
+                shake_l[2] = False
+        if shake_l[3] == True:
+            timer_l[3] += 1
+            if timer_l[3] == 60:
+                cardback_db = Sprite_init.Cardback_4()
+                cardb_dblue_list.add(cardback_db)
+                cardback_db.rect.x = ness_pos_x
+                cardback_db.rect.y = ness_pos_y
+                timer_l[3] = 0
+                shake_l[3] = False
+        if shake_l[4] == True:
+            timer_l[4] += 1
+            if timer_l[4] == 60:
+                cardback_r = Sprite_init.Cardback_1()
+                cardb_red_list.add(cardback_db)
+                cardback_r.rect.x = ness_pos_x
+                cardback_r.rect.y = ness_pos_y
+                timer_l[4] = 0
+                shake_l[4] = False
         if shake_l[5] == True:
             timer_l[5] += 1
             if timer_l[5] == 60:
@@ -443,6 +530,15 @@ def Level_1():
                 cardback_db.rect.y = ness_pos_y
                 timer_l[6] = 0
                 shake_l[6] = False
+        if shake_l[7] == True:
+            timer_l[7] += 1
+            if timer_l[7] == 60:
+                cardback_lb = Sprite_init.Cardback_3()
+                cardb_lblue_list.add(cardback_lb)
+                cardback_lb.rect.x = ness_pos_x
+                cardback_lb.rect.y = ness_pos_y
+                timer_l[2] = 0
+                shake_l[2] = False
         if shake_l[8] == True:
             timer_l[8] += 1
             if timer_l[8] == 60:
@@ -461,6 +557,10 @@ def Level_1():
                 cardback_db.rect.y = ness_pos_y
                 timer_l[9] = 0
                 shake_l[9] = False
+        text = font.render("Score: ", True, white)
+        text1 = font.render(str(score), True, white)
+        screen.blit(text, [win_place[0], 400])
+        screen.blit(text1, [win_place[0]+70, 500])
         card_1_list.draw(screen)
         card_2_list.draw(screen)
         card_3_list.draw(screen)
