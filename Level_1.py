@@ -23,10 +23,17 @@ def Level_1():
     counter_8 = 0
     counter_9 = 0
     counter_10 = 0
+    final_count = 0
     shake = [False, False, False, False, False, False, False, False, False, False]
     timer_sh = [0,0,0,0,0,0,0,0,0,0]
     shake_l = [False, False, False, False, False, False, False, False, False, False]
     timer_l = [0,0,0,0,0,0,0,0,0,0]
+    move = [False, False, False, False, False, False, False, False, False, False]
+    move_l = [False, False, False, False, False, False, False, False, False, False]
+    tim = [0,0,0,0,0,0,0,0,0,0]
+    tim_l = [0,0,0,0,0,0,0,0,0,0]
+    left = [10,10,10,10,10,10,10,10,10,10]
+    left_l = [10,10,10,10,10,10,10,10,10,10]
     freedom = True
     fr_count = 0
     step_x = 0
@@ -38,6 +45,8 @@ def Level_1():
     ness_pos_x = 0
     all_ch = 0
     font = pygame.font.Font(None, 100)
+    font.set_italic(1)
+    font1 = pygame.font.Font(None, 100)
     font.set_italic(1)
     click_sound = pygame.mixer.Sound("click.wav")
     explode_sound = pygame.mixer.Sound("explode.wav")
@@ -261,16 +270,43 @@ def Level_1():
                             all_ch = 2
                             print ('da1')
                             if number == 1:
+                                score += 10
                                 for card_1 in card_1_list:
                                     if card_1.rect.x == position_x and card_1.rect.y == position_y:
                                         card_1_list.remove(card_1)
                                     if card_1.rect.x == ness_pos_x and card_1.rect.y == ness_pos_y:
                                         card_1_list.remove(card_1)
-                            else:
-                                cardback_lb = Sprite_init.Cardback_3()
-                                cardb_lblue_list.add(cardback_lb)
-                                cardback_lb.rect.x = position_x
-                                cardback_lb.rect.y = position_y
+                                        card_1_w = Sprite_init.Card_1()
+                                        card_win_list.add(card_1_w)
+                                        card_1_w.rect.x = win_place[0]
+                                        card_1_w.rect.y = win_place[1]
+                            elif number == 2:
+                                shake[0] = True
+                                shake_l[1] = True
+                            elif number == 3:
+                                shake[0] = True
+                                shake_l[2] = True
+                            elif number == 4:
+                                shake[0] = True
+                                shake_l[3] = True
+                            elif number == 5:
+                                shake[0] = True
+                                shake_l[4] = True
+                            elif number == 6:
+                                shake[0] = True
+                                shake_l[5] = True
+                            elif number == 7:
+                                shake[0] = True
+                                shake_l[6] = True
+                            elif number == 8:
+                                shake[0] = True
+                                shake_l[7] = True
+                            elif number == 9:
+                                shake[0] = True
+                                shake_l[8] = True
+                            elif number == 10:
+                                shake[0] = True
+                                shake_l[9] = True
                             couple = 0
                             compare = False
                     for card_2 in card_2_list:
@@ -281,11 +317,43 @@ def Level_1():
                             all_ch = 2
                             print ('da2')
                             if number == 2:
+                                score += 10
                                 for card_2 in card_2_list:
                                     if card_2.rect.x == position_x and card_2.rect.y == position_y:
                                         card_2_list.remove(card_2)
                                     if card_2.rect.x == ness_pos_x and card_2.rect.y == ness_pos_y:
                                         card_2_list.remove(card_2)
+                                        card_2_w = Sprite_init.Card_2()
+                                        card_win_list.add(card_2_w)
+                                        card_2_w.rect.x = win_place[0]
+                                        card_2_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[1] = True
+                                shake_l[0] = True
+                            elif number == 3:
+                                shake[1] = True
+                                shake_l[2] = True
+                            elif number == 4:
+                                shake[1] = True
+                                shake_l[3] = True
+                            elif number == 5:
+                                shake[1] = True
+                                shake_l[4] = True
+                            elif number == 6:
+                                shake[1] = True
+                                shake_l[5] = True
+                            elif number == 7:
+                                shake[1] = True
+                                shake_l[6] = True
+                            elif number == 8:
+                                shake[1] = True
+                                shake_l[7] = True
+                            elif number == 9:
+                                shake[1] = True
+                                shake_l[8] = True
+                            elif number == 10:
+                                shake[1] = True
+                                shake_l[9] = True
                             couple = 0
                             compare = False
                     for card_3 in card_3_list:
@@ -296,11 +364,43 @@ def Level_1():
                             all_ch = 2
                             print ('da3')
                             if number == 3:
+                                score += 10
                                 for card_3 in card_3_list:
                                     if card_3.rect.x == position_x and card_3.rect.y == position_y:
                                         card_3_list.remove(card_3)
                                     if card_3.rect.x == ness_pos_x and card_3.rect.y == ness_pos_y:
                                         card_3_list.remove(card_3)
+                                        card_3_w = Sprite_init.Card_3()
+                                        card_win_list.add(card_3_w)
+                                        card_3_w.rect.x = win_place[0]
+                                        card_3_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[2] = True
+                                shake_l[0] = True
+                            elif number == 2:
+                                shake[2] = True
+                                shake_l[1] = True
+                            elif number == 4:
+                                shake[2] = True
+                                shake_l[3] = True
+                            elif number == 5:
+                                shake[2] = True
+                                shake_l[4] = True
+                            elif number == 6:
+                                shake[2] = True
+                                shake_l[5] = True
+                            elif number == 7:
+                                shake[2] = True
+                                shake_l[6] = True
+                            elif number == 8:
+                                shake[2] = True
+                                shake_l[7] = True
+                            elif number == 9:
+                                shake[2] = True
+                                shake_l[8] = True
+                            elif number == 10:
+                                shake[2] = True
+                                shake_l[9] = True
                             couple = 0
                             compare = False
                     for card_4 in card_4_list:
@@ -321,6 +421,33 @@ def Level_1():
                                         card_win_list.add(card_4_w)
                                         card_4_w.rect.x = win_place[0]
                                         card_4_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[3] = True
+                                shake_l[0] = True
+                            elif number == 2:
+                                shake[3] = True
+                                shake_l[1] = True
+                            elif number == 3:
+                                shake[3] = True
+                                shake_l[2] = True
+                            elif number == 5:
+                                shake[3] = True
+                                shake_l[4] = True
+                            elif number == 6:
+                                shake[3] = True
+                                shake_l[5] = True
+                            elif number == 7:
+                                shake[3] = True
+                                shake_l[6] = True
+                            elif number == 8:
+                                shake[3] = True
+                                shake_l[7] = True
+                            elif number == 9:
+                                shake[3] = True
+                                shake_l[8] = True
+                            elif number == 10:
+                                shake[3] = True
+                                shake_l[9] = True
                             couple = 0
                             compare = False
                     for card_5 in card_5_list:
@@ -388,6 +515,33 @@ def Level_1():
                                         card_win_list.add(card_6_w)
                                         card_6_w.rect.x = win_place[0]
                                         card_6_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[5] = True
+                                shake_l[0] = True
+                            elif number == 2:
+                                shake[5] = True
+                                shake_l[1] = True
+                            elif number == 3:
+                                shake[5] = True
+                                shake_l[2] = True
+                            elif number == 4:
+                                shake[5] = True
+                                shake_l[3] = True
+                            elif number == 5:
+                                shake[5] = True
+                                shake_l[4] = True
+                            elif number == 7:
+                                shake[5] = True
+                                shake_l[6] = True
+                            elif number == 8:
+                                shake[5] = True
+                                shake_l[7] = True
+                            elif number == 9:
+                                shake[5] = True
+                                shake_l[8] = True
+                            elif number == 10:
+                                shake[5] = True
+                                shake_l[9] = True
                             couple = 0
                             compare = False
                     for card_7 in card_7_list:
@@ -398,11 +552,43 @@ def Level_1():
                             all_ch = 2
                             print ('da7')
                             if number == 7:
+                                score += 10
                                 for card_7 in card_7_list:
                                     if card_7.rect.x == position_x and card_7.rect.y == position_y:
                                         card_7_list.remove(card_7)
                                     if card_7.rect.x == ness_pos_x and card_7.rect.y == ness_pos_y:
                                         card_7_list.remove(card_7)
+                                        card_7_w = Sprite_init.Card_7()
+                                        card_win_list.add(card_7_w)
+                                        card_7_w.rect.x = win_place[0]
+                                        card_7_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[6] = True
+                                shake_l[0] = True
+                            elif number == 2:
+                                shake[6] = True
+                                shake_l[1] = True
+                            elif number == 3:
+                                shake[6] = True
+                                shake_l[2] = True
+                            elif number == 4:
+                                shake[6] = True
+                                shake_l[3] = True
+                            elif number == 5:
+                                shake[6] = True
+                                shake_l[4] = True
+                            elif number == 6:
+                                shake[6] = True
+                                shake_l[5] = True
+                            elif number == 8:
+                                shake[6] = True
+                                shake_l[7] = True
+                            elif number == 9:
+                                shake[6] = True
+                                shake_l[8] = True
+                            elif number == 10:
+                                shake[6] = True
+                                shake_l[9] = True
                             couple = 0
                             compare = False
                     for card_8 in card_8_list:
@@ -413,11 +599,43 @@ def Level_1():
                             all_ch = 2
                             print ('da8')
                             if number == 8:
+                                score += 10
                                 for card_8 in card_8_list:
                                     if card_8.rect.x == position_x and card_8.rect.y == position_y:
                                         card_8_list.remove(card_8)
                                     if card_8.rect.x == ness_pos_x and card_8.rect.y == ness_pos_y:
                                         card_8_list.remove(card_8)
+                                        card_8_w = Sprite_init.Card_8()
+                                        card_win_list.add(card_8_w)
+                                        card_8_w.rect.x = win_place[0]
+                                        card_8_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[7] = True
+                                shake_l[0] = True
+                            elif number == 2:
+                                shake[7] = True
+                                shake_l[1] = True
+                            elif number == 3:
+                                shake[7] = True
+                                shake_l[2] = True
+                            elif number == 4:
+                                shake[7] = True
+                                shake_l[3] = True
+                            elif number == 5:
+                                shake[7] = True
+                                shake_l[4] = True
+                            elif number == 6:
+                                shake[7] = True
+                                shake_l[5] = True
+                            elif number == 7:
+                                shake[7] = True
+                                shake_l[6] = True
+                            elif number == 9:
+                                shake[7] = True
+                                shake_l[8] = True
+                            elif number == 10:
+                                shake[7] = True
+                                shake_l[9] = True
                             couple = 0
                             compare = False
                     for card_9 in card_9_list:
@@ -438,6 +656,33 @@ def Level_1():
                                         card_win_list.add(card_9_w)
                                         card_9_w.rect.x = win_place[0]
                                         card_9_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[8] = True
+                                shake_l[0] = True
+                            elif number == 2:
+                                shake[8] = True
+                                shake_l[1] = True
+                            elif number == 3:
+                                shake[8] = True
+                                shake_l[2] = True
+                            elif number == 4:
+                                shake[8] = True
+                                shake_l[3] = True
+                            elif number == 5:
+                                shake[8] = True
+                                shake_l[4] = True
+                            elif number == 6:
+                                shake[8] = True
+                                shake_l[5] = True
+                            elif number == 7:
+                                shake[8] = True
+                                shake_l[6] = True
+                            elif number == 8:
+                                shake[8] = True
+                                shake_l[7] = True
+                            elif number == 10:
+                                shake[8] = True
+                                shake_l[9] = True
                             couple = 0
                             compare = False
                     for card_10 in card_10_list:
@@ -448,15 +693,87 @@ def Level_1():
                             all_ch = 2
                             print ('da10')
                             if number == 10:
+                                score += 10
                                 for card_10 in card_10_list:
                                     if card_10.rect.x == position_x and card_10.rect.y == position_y:
                                         card_10_list.remove(card_10)
                                     if card_10.rect.x == ness_pos_x and card_10.rect.y == ness_pos_y:
                                         card_10_list.remove(card_10)
+                                        card_10_w = Sprite_init.Card_10()
+                                        card_win_list.add(card_10_w)
+                                        card_10_w.rect.x = win_place[0]
+                                        card_10_w.rect.y = win_place[1]
+                            elif number == 1:
+                                shake[9] = True
+                                shake_l[0] = True
+                            elif number == 2:
+                                shake[9] = True
+                                shake_l[1] = True
+                            elif number == 3:
+                                shake[9] = True
+                                shake_l[2] = True
+                            elif number == 4:
+                                shake[9] = True
+                                shake_l[3] = True
+                            elif number == 5:
+                                shake[9] = True
+                                shake_l[4] = True
+                            elif number == 6:
+                                shake[9] = True
+                                shake_l[5] = True
+                            elif number == 7:
+                                shake[9] = True
+                                shake_l[6] = True
+                            elif number == 8:
+                                shake[9] = True
+                                shake_l[7] = True
+                            elif number == 9:
+                                shake[9] = True
+                                shake_l[8] = True
                             couple = 0
                             compare = False
                     if all_ch == 1:
                         compare = False
+        if shake[0] == True:
+            timer_sh[0] +=1
+            if timer_sh[0] == 60:
+                explode_sound.play()
+                cardback_lb = Sprite_init.Cardback_3()
+                cardb_lblue_list.add(cardback_lb)
+                cardback_lb.rect.x = position_x
+                cardback_lb.rect.y = position_y
+                timer_sh[0] = 0
+                shake[0] = False
+        if shake[1] == True:
+            timer_sh[1] +=1
+            if timer_sh[1] == 60:
+                explode_sound.play()
+                cardback_lb = Sprite_init.Cardback_3()
+                cardb_lblue_list.add(cardback_lb)
+                cardback_lb.rect.x = position_x
+                cardback_lb.rect.y = position_y
+                timer_sh[1] = 0
+                shake[1] = False
+        if shake[2] == True:
+            timer_sh[2] +=1
+            if timer_sh[2] == 60:
+                explode_sound.play()
+                cardback_db = Sprite_init.Cardback_4()
+                cardb_dblue_list.add(cardback_db)
+                cardback_db.rect.x = position_x
+                cardback_db.rect.y = position_y
+                timer_sh[2] = 0
+                shake[2] = False
+        if shake[3] == True:
+            timer_sh[3] +=1
+            if timer_sh[3] == 60:
+                explode_sound.play()
+                cardback_db = Sprite_init.Cardback_4()
+                cardb_dblue_list.add(cardback_db)
+                cardback_db.rect.x = position_x
+                cardback_db.rect.y = position_y
+                timer_sh[3] = 0
+                shake[3] = False
         if shake[4] == True:
             timer_sh[4] +=1
             if timer_sh[4] == 60:
@@ -466,7 +783,58 @@ def Level_1():
                 cardback_r.rect.x = position_x
                 cardback_r.rect.y = position_y
                 timer_sh[4] = 0
+                move[4] = True
                 shake[4] = False
+        if shake[5] == True:
+            timer_sh[5] +=1
+            if timer_sh[5] == 60:
+                explode_sound.play()
+                cardback_g = Sprite_init.Cardback_2()
+                cardb_green_list.add(cardback_g)
+                cardback_g.rect.x = position_x
+                cardback_g.rect.y = position_y
+                timer_sh[5] = 0
+                shake[5] = False
+        if shake[6] == True:
+            timer_sh[6] +=1
+            if timer_sh[6] == 60:
+                explode_sound.play()
+                cardback_db = Sprite_init.Cardback_4()
+                cardb_dblue_list.add(cardback_db)
+                cardback_db.rect.x = position_x
+                cardback_db.rect.y = position_y
+                timer_sh[6] = 0
+                shake[6] = False
+        if shake[7] == True:
+            timer_sh[7] +=1
+            if timer_sh[7] == 60:
+                explode_sound.play()
+                cardback_lb = Sprite_init.Cardback_3()
+                cardb_lblue_list.add(cardback_lb)
+                cardback_lb.rect.x = position_x
+                cardback_lb.rect.y = position_y
+                timer_sh[7] = 0
+                shake[7] = False
+        if shake[8] == True:
+            timer_sh[8] +=1
+            if timer_sh[8] == 60:
+                explode_sound.play()
+                cardback_g = Sprite_init.Cardback_2()
+                cardb_green_list.add(cardback_g)
+                cardback_g.rect.x = position_x
+                cardback_g.rect.y = position_y
+                timer_sh[8] = 0
+                shake[8] = False
+        if shake[9] == True:
+            timer_sh[9] +=1
+            if timer_sh[9] == 60:
+                explode_sound.play()
+                cardback_db = Sprite_init.Cardback_4()
+                cardb_dblue_list.add(cardback_db)
+                cardback_db.rect.x = position_x
+                cardback_db.rect.y = position_y
+                timer_sh[9] = 0
+                shake[9] = False
         if shake_l[0] == True:
             timer_l[0] += 1
             if timer_l[0] == 60:
@@ -507,7 +875,7 @@ def Level_1():
             timer_l[4] += 1
             if timer_l[4] == 60:
                 cardback_r = Sprite_init.Cardback_1()
-                cardb_red_list.add(cardback_db)
+                cardb_red_list.add(cardback_r)
                 cardback_r.rect.x = ness_pos_x
                 cardback_r.rect.y = ness_pos_y
                 timer_l[4] = 0
@@ -537,8 +905,8 @@ def Level_1():
                 cardb_lblue_list.add(cardback_lb)
                 cardback_lb.rect.x = ness_pos_x
                 cardback_lb.rect.y = ness_pos_y
-                timer_l[2] = 0
-                shake_l[2] = False
+                timer_l[7] = 0
+                shake_l[7] = False
         if shake_l[8] == True:
             timer_l[8] += 1
             if timer_l[8] == 60:
@@ -561,6 +929,49 @@ def Level_1():
         text1 = font.render(str(score), True, white)
         screen.blit(text, [win_place[0], 400])
         screen.blit(text1, [win_place[0]+70, 500])
+        if move[4] == True:
+            print('move rabotaet')
+            text_5 = font.render(str(left[4]), True, white)
+            screen.blit(text_5, [win_place[0], 700])
+            tim[4] += 1
+            if tim[4]% 60 == 0:
+                left[4] -= 1
+            if tim[4] == 600:
+                cardb_red_list.remove(cardback_r)
+                tim[4] = 0
+                left[4] = 10
+                move[4] = False
+
+
+
+
+
+
+            
+        for card_1 in card_1_list:
+            final_count += 1
+        for card_2 in card_2_list:
+            final_count += 1
+        for card_3 in card_3_list:
+            final_count += 1
+        for card_4 in card_4_list:
+            final_count += 1
+        for card_5 in card_5_list:
+            final_count += 1
+        for card_6 in card_6_list:
+            final_count += 1
+        for card_7 in card_7_list:
+            final_count += 1
+        for card_8 in card_8_list:
+            final_count +=1
+        for card_9 in card_9_list:
+            final_count +=1
+        for card_10 in card_10_list:
+            final_count += 1
+        if final_count < 2:
+            done = True
+        else:
+            final_count = 0
         card_1_list.draw(screen)
         card_2_list.draw(screen)
         card_3_list.draw(screen)
@@ -580,4 +991,5 @@ def Level_1():
         pygame.display.flip()
         clock.tick(60)
     pygame.quit()
+    
 Level_1()
